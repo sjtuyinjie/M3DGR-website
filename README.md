@@ -1,13 +1,13 @@
-# Gaussian-LIC2
+# M3DGR & Ground-Fusion++
 
-This is the project webpage for the [Gaussian-LIC2 website](https://xingxingzuo.github.io/gaussian_lic2).
+This is the project webpage for the [IROS2025 M3DGR website](https://sjtuyinjie.github.io/M3DGR-website/).
 
-If you find Gaussian-LIC2 useful for your work please cite:
+If you find M3DGR/Ground-Fusion++ useful for your work please cite:
 ```
 Coming_soon...
 @article{lang2025gaussian2,
-title     = {Gaussian-LIC2: LiDAR-Inertial-Camera Gaussian Splatting SLAM},
-author    = {Lang, Xiaolei and Lv, Jiajun and Tang, Kai and Li, Laijian and Huang, Jianxin and Liu, Lina and Liu, Yong and Zuo, Xingxing},
+title     = {Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and a Resilient Framework},
+author    = {Deteng Zhang, Junjie Zhang, Yan Sun, Tao Li, Hao Yin, Hongzhao Xie and  Jie Yin5},
 journal   = {arXiv},
 year      = {2025},
 }
