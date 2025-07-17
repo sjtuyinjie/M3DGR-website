@@ -5,7 +5,7 @@ This is the project webpage for the [IROS2025 M3DGR website](https://sjtuyinjie.
 If you find M3DGR/Ground-Fusion++ useful for your work please cite:
 ```
 Coming_soon...
-@article{lang2025gaussian2,
+@article{yin2025m3dgr_gf2,
 title     = {Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and a Resilient Framework},
 author    = {Deteng Zhang, Junjie Zhang, Yan Sun, Tao Li, Hao Yin, Hongzhao Xie and  Jie Yin5},
 journal   = {arXiv},
