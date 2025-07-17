@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and a Resilient Framework">
+    <meta name="keywords" content="Photo-Realistic SLAM, 3D Gaussian Splatting, LiDAR-Inertial-Camera Fusion">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and a Resilient Framework</title>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6PYDPEBZZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-L6PYDPEBZZ');
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/video_comparison.js"></script>
+  </head>
+  <body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://sjtuyinjie.github.io">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/SJTU-ViSYS/M2DGR">
+              M2DGR(ICRA2022&RAL2021)
+            </a>
+            <a class="navbar-item" href="https://github.com/SJTU-ViSYS/Ground-Fusion">
+              Ground-Fusion(ICRA2024)
+            </a>
+            <a class="navbar-item" href="https://github.com/sjtuyinjie/DAF">
+              DAF(IROS2024)
+            </a>
+            <a class="navbar-item" href="https://github.com/Joanna-HE/LIGO.">
+              LIGO(TRO2025&IROS2025)
+            </a>
+            <a class="navbar-item" href="https://delinqu.github.io/EN-SLAM/">
+              EN-SLAM(CVPR2024)
+            </a>
+            <a class="navbar-item" href="https://link.springer.com/article/10.1007/s10291-024-01623-9">
+              Innovation-KF(GPS Solutions2024)
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and A Resilient Framework
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                <a href="" target="_blank">Deteng Zhang</a><sup>1,#</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Junjie Zhang</a><sup>2,#</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Yan Sun</a><sup>3</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Tao Li</a><sup>4</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Hao Yin</a><sup>5</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Hongzhao Xie</a><sup>5</sup>,</span>
+                <span class="author-block">
+                <a href="https://sjtuyinjie.github.io/" target="_blank">Jie Yin</a><sup>5,*</sup>
+                </span>
+              </div>
+              <div class="column is-full_width">
+                <h2 class="is-size-6"># Equal Contribution</h2>
+                <h2 class="is-size-6">* Corresponding Author</h2>
+              <!-- <h2 class="is-size-6">(* equal contribution)  (<span>&#8224;</span> corresponding author)</h2> -->
+            </div>
+              <div class="is-size-5 publication-authors">
+                <!-- <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                <span class="author-block"><sup>#</sup>Corresponding Author</span> -->
+                <span class="author-block"><sup>1</sup>Independent,</span>
+                <span class="author-block"><sup>2</sup>CQU</span>
+                <span class="author-block"><sup>3</sup>NKU</span>
+                <span class="author-block"><sup>4</sup>ZJTU</span>
+                <span class="author-block"><sup>5</sup>SJTU</span>
+
+              </div>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2507.08364"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.08364" class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                  <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=SkPnpuCfh88"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fas fa-video"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://github.com/sjtuyinjie/Ground-Fusion2"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://github.com/sjtuyinjie/M3DGR"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fas fa-cube"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+                  </span>
+                </div>
+              </div>
+              <div class="column has-text-centered" style="margin-top: 5px;">
+                <img src="./static/images/gf1.gif" alt="Overview Image" style="max-width: 40%; height: auto;">
+                <img src="./static/images/gf2.gif" alt="Overview Image" style="max-width: 34%; height: auto;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="notification has-text-weight-bold mb-6" 
+               style="background: linear-gradient(135deg, #f5f9ff 0%, #e1edff 100%);
+                      border-left: 4px solid #002D72; font-size: 0.92rem;">
+            <div class="is-flex is-align-items-center">
+              <span class="icon is-large mr-3" style="color: #0072CE;">
+                <i class="fas fa-bolt"></i>
+              </span>
+              <div>
+                <strong style="color: #002D72;">TL;DR:</strong> 
+                <span style="display: inline; white-space: normal; color: #333;">
+                  This paper presents a full-stack solution for robust sensor-fusion ground SLAM under corner cases, including a comprehensive benchmark dataset M3DGR with systematic degradation patterns, an extensive evaluation of forty SLAM systems, and a resilient multi-sensor fusion framework Ground-Fusion++. The framework integrates GNSS, RGB-D, LiDAR, IMU, and wheel odometry to achieve robust performance in challenging real-world conditions.
+
+                </span>
+              </div>
+            </div>
+            </div>
+
+
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+              This work introduces <strong style="color: #002D72;">M3DGR</strong> and <strong style="color: #002D72;">Ground-Fusion++</strong>, 
+              Considerable advancements have been achieved in SLAM methods tailored for structured environments, yet their robustness under challenging corner cases remains a critical limitation. Although multi-sensor fusion approaches integrating diverse sensors have shown promising performance improvements, the research community faces two key barriers: On one hand, the lack of standardized and configurable benchmarks that systematically evaluate SLAM algorithms under diverse degradation scenarios hinders comprehensive performance assessment. While on the other hand, existing SLAM frameworks primarily focus on fusing a limited set of sensor types, without effectively addressing adaptive sensor selection strategies for varying environmental conditions. To bridge these gaps, we make three key contributions: First, we introduce <a href="https://github.com/sjtuyinjie/M3DGR">M3DGR</a> dataset: a sensor-rich benchmark with systematically induced degradation patterns including visual challenge, LiDAR degeneracy, wheel slippage and GNSS denial. Second, we conduct a comprehensive evaluation of forty SLAM systems on M3DGR, providing critical insights into their robustness and limitations under challenging real-world conditions. Third, we develop a resilient modular multi-sensor fusion framework named <a href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++</a>, which demonstrates robust performance by coupling GNSS, RGB-D, LiDAR, IMU (Inertial Measurement Unit) and wheel odometry. Codes and datasets are publicly available.
+            </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -20px">Data Capture Ground Robot</h2>
+            <img src="./static/images/platform.png" class="center" style="width:85%; height:auto;">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                Physical drawings and schematics of the ground robot. (a) Side view of the robot. (b) Sensor arrangement on the top layer. (c) Sensor arrangement on the middle and bottom layers. All dimensions are provided in centimeters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -30px">In-Sequence RGB & Depth Novel View Synthesis</h2>
+            <img src="./static/images/gf1.gif" class="center" style="width:85%; height:auto;">
+            <img src="./static/images/gf2.gif" class="center" style="width:85%; height:auto;">
+            <div class="content has-text-justified">
+              <p style="margin-top: 10px">
+                
+              </p>
+            </div>
+            <img src="./static/images/gf2.gif" class="center" style="width:50%; height:auto;">
+            <div class="content has-text-justified">
+              <p style="margin-top: 0px">
+                <!-- <b>Overview of the system outputs</b> (ordered left to right, top to bottom): (1) reconstructed map comprised of 3D Gaussians, (2) RGB image rendered from a novel viewpoint, (3) sparse LiDAR point cloud map, (4) depth map rendered from the novel viewpoint, and (5) 3D mesh extracted from the Gaussian map. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -30px">Comprehensive Evaluation of 40 cutting-edge methods on M3DGR sequences.</h2>
+            <img src="./static/images/M3DGR_eval.png" class="center">
+            <div class="content has-text-justified">
+              <p style="margin-top: 10px">
+                <b>Qualitative results of ATE RMSE(m) of 40 SLAM methods on M3DGR sequences. Ground-Fusion achieves significantly better robustness under harsh degradation scenarios.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -30px">Applications</h2>
+          
+            <img src="./static/images/video.png" class="center">
+            <div class="content has-text-justified">
+              <p style="margin-top: 10px">
+                <b>Application1 - Real-time Localization and Navigation for ground robots.
+              </p>
+            </div>
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                
+              </p>
+            </div>
+            <img src="./static/images/gf2.gif" class="center">
+            <img src="./static/images/gf2.gif" class="center">
+            <!-- <img src="./static/images/mesh.png" class="center"> -->
+            <div class="content has-text-justified">
+              <p style="margin-top: 10px">
+                <b>Application2 - Rapid color Mesh Generation.
+              </p>
+            </div>
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                
+              </p>
+            </div>
+            <img src="./static/images/logov3.png" class="center" style="width:80%; height:auto;">
+            <!-- <img src="./static/images/mesh.png" class="center"> -->
+            <div class="content has-text-justified">
+              <p style="margin-top: 10px">
+                <b>Application3 - Comprehensive benchmark for SLAM methods.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{lang2025gaussian2,
+  title={Towards Robust Sensor-Fusion Ground SLAM: A Comprehensive Benchmark and A Resilient Framework}, 
+  author={Lang, Xiaolei and Lv, Jiajun and Tang, Kai and Li, Laijian and Huang, Jianxin and Liu, Lina and Liu, Yong and Zuo, Xingxing},
+  journal={arXiv}, 
+  year={2025}
+}</code></pre>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                This website template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+                We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
